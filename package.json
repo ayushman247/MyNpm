@@ -1,0 +1,17 @@
+{
+  "name": "ayushman",
+  "version": "1.0.1",
+  "description": "A simple package to display my details",
+  "type": "module",
+  "bin": {
+    "mydetails": "./index.js"
+  },
+  "author": "Ayushman Chaturvedi",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "figlet": "^1.8.0",
+    "inquirer": "^12.4.2",
+    "terminal-link": "^3.0.0"
+  }
+}

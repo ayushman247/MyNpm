@@ -3,21 +3,27 @@
 import chalk from "chalk";
 import inquirer from "inquirer";
 import terminalLink from "terminal-link";
+import supportsHyperlinks from "supports-hyperlinks";
 
 // Define colors
-const nameColor = chalk.hex("#FFA500").bold; 
-const linkColor = chalk.hex("#87CEEB").bold; 
+const nameColor = chalk.hex("#FFA500").bold;
+const linkColor = chalk.hex("#87CEEB").bold;
 
-const linkedIn = nameColor("🔗 linkedIn") + ": " + linkColor(terminalLink("", "https://www.linkedin.com/in/ayushman-chaturvedi-084961245/"));
-const gitHub = nameColor("💻 gitHub") + ": " + linkColor(terminalLink("", "https://github.com/ayushman247"));
-const email = nameColor("📧 email") + ": " + linkColor(terminalLink("", "mailto:ayushman2407@gmail.com"));
-const phone = nameColor("📞 phone") + ": " + linkColor(terminalLink("", "tel:6392860360"));
+// Function to create hyperlinks with fallback to full URL
+const createLink = (text, url) => {
+  return supportsHyperlinks.stdout ? linkColor(terminalLink(text, url)) : linkColor(url);
+};
+
+const linkedIn = nameColor("🔗 LinkedIn") + ": " + createLink("LinkedIn/Ayushman247", "https://www.linkedin.com/in/ayushman-chaturvedi-084961245/");
+const gitHub = nameColor("💻 GitHub") + ": " + createLink("GitHub/ayushman247", "https://github.com/ayushman247");
+const email = nameColor("📧 Email") + ": " + createLink("ayushman2407@gmail.com", "mailto:ayushman2407@gmail.com");
+const phone = nameColor("📞 Phone") + ": " + createLink("6392860360", "tel:6392860360");
 
 console.log(chalk.yellow.bold("\nHey there! I'm Ayushman Chaturvedi 🤓"));
 console.log(chalk.hex("#75fd71").bold("\nI love coding, building cool stuff, and making computers cry with my debugging skills."));
 
 console.log("\n📚 " + chalk.magenta.bold("Education:"));
-console.log(chalk.white("Bennett University | B.Tech CSE (2021-2025) | GPA: 9.38 (Yeah, I study sometimes!)"));
+console.log(chalk.white("Bennett University | B.Tech CSE (2021-2025) | GPA: 9.45 (Yeah, I study sometimes!)"));
 
 console.log("\n💼 " + chalk.magenta.bold("Experience:"));
 console.log(chalk.white("🔹 Web Development Intern at Evalueserve - Gurgaon"));

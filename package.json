@@ -1,6 +1,6 @@
 {
   "name": "ayushman",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A simple package to display my details",
   "type": "module",
   "bin": {
